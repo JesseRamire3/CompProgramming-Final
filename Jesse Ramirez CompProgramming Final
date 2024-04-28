@@ -1,0 +1,40 @@
+#rock paper scissors game
+
+import random
+
+#user actions
+
+while True:
+    actions = input("Enter a choice (rock, paper, scissors): ")
+    possible_actions = ["rock", "paper", "scissors"]
+    computer_action = random.choice(possible_actions)
+    print(f"\nYou chose {actions}, computer chose {computer_action}.\n")
+
+#possible outcomes 
+
+    if actions == computer_action:
+        print(f"Both players selected {actions}. tie!")
+
+    elif actions == "rock":
+        if computer_action == "scissors":
+            print("Rock crushes scissors. You win!")
+        else:
+            print("Paper covers rock. You lose!")
+
+    elif actions == "paper":
+        if computer_action == "rock":
+            print("Paper covers rock. You win!")
+        else:
+            print("Scissors slices paper. You lose.")
+
+    elif actions == "scissors":
+        if computer_action == "paper":
+            print("Scissors slices paper. You win!")
+        else:
+            print("Rock crushes scissors. You lose!")
+
+#the loop to play again indefinitely
+
+    replay = input("Play again? (yes/no): ")
+    if replay.lower() != "yes":
+        break
